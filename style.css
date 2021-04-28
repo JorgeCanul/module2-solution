@@ -1,58 +1,63 @@
 /* You must implement the following breakpoints that will be considered desktop, tablet, and mobile. The browser should display a desktop version of the site when the width of the browser window is 992px and above. Tablet view should appear only if the width of the browser window is between 768px and 991px, inclusively. Mobile view should appear only if the width of the browser is equal to or less than 767px. */
 
 body {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: auto 1fr auto;
+  font-family: system-ui, serif;
 }
 
-
-header {
-  background: lightpink;
-  padding: 2rem;
-}
-
-main {
-  background: coral;
-}
-
-footer {
-  background: wheat;
-  padding: 2rem;
+  /* MOBILE  FIRST */
+h1 {
   text-align: center;
+  padding-top: 40px;
 }
 
-body {
-  font-family: system-ui, sans-serif;
+.parent {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  margin-top: 40px;
 }
+
+.header {
+  display: grid;
+  justify-content: flex-end;
+}
+
+.child {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: gray;
+  justify-content: space-between;
+}
+
+span {
+  background-color: green;
+  padding: 10px 20px 10px 20px;
+}
+
+ .child p{
+  padding: 20px;
+}
+
 
 @media (min-width: 768px){
-.item1 { grid-area: main; }
-.item2 { grid-area: right; }
-.item3 { grid-area: footer; }
-    .grid-container {
-        display: grid;
-        grid-template-areas:
-          ' main main main right right'
-          ' footer footer footer footer footer';
-        grid-gap: 10px;
-        background-color: #2196F3;
-        padding: 10px;
-      }
+  .parent {
+    margin-top: 100px;
+    display: flex;
+   flex-wrap: wrap;
+  }
+
+  .child {
+    flex: 1 1 300px;
+  }
 }
 
 
 @media (min-width: 992px) {
-.item1 { grid-area: main; }
-.item2 { grid-area: center; }
-.item3 { grid-area: right; }
-    .grid-container {
-        grid-template-areas:'main center right';
-      }
-      .title {
-        position: absolute;
-        left: 87%;
-        margin-top: -5%;
-    }
+  .parent {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
     
 }
